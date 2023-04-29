@@ -1,0 +1,120 @@
+{% extends 'html/dashboard.html' %} {% block tittle %}home{% endblock tittle %}
+{% block body %}
+
+<div class="container">
+  <div class="container">
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Login Page</title>
+        <!--Made with love by Mutiullah Samim -->
+
+        <!--Bootsrap 4 CDN-->
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous"
+        />
+
+        <!--Fontawesome CDN-->
+        <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+          crossorigin="anonymous"
+        />
+
+        <!--Custom styles-->
+
+        <style>
+              /* Made with love by Mutiullah Samim*/
+
+          @import url('https://fonts.googleapis.com/css?family=Numans');
+
+          html,body{
+          background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 100%;
+          font-family: 'Numans', sans-serif;
+          }
+
+          .container{
+          height: 100%;
+          align-content: center;
+          
+          }
+{% comment %} 
+          .card{
+            
+          
+          background-color: rgba(0,0,0,0.5) !important;
+          
+          } {% endcomment %}
+          .card{
+            color:black
+          }
+
+        
+
+
+
+
+
+
+
+
+
+          .card-deck{
+            color:white;
+            width: 68%;
+            margin-top: 20px;
+            padding: 6px 12px;
+            
+            {% comment %} height: 40px; {% endcomment %}
+            {% comment %} border: 1px solid #ced4da; {% endcomment %}
+            border-radius: 0.25rem;
+           
+            
+       
+            border:0 !important;
+          }
+        </style>
+      </head>
+      <body>
+
+        <div style="display:grid ; grid-template-columns: repeat(4, 1fr); padding:10px ;padding-top:0px" >
+  
+          {% for i in data %}
+      
+        <div class="card-deck" style="width: 18rem ; margin:5px border-radius:10px">
+          <div class="card"  > 
+            <img class="card-img-top" src="/media/{{i.media}}"alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{i.shop_name }}</h5>
+              <p class="card-text">{{i.address}}</p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">{{i.ratting}}</small>
+            </div>
+          </div>
+        </div>
+      
+       
+      {% endfor %}
+        </div>
+      </body>
+    </html>
+  </div>
+</div>
+{% endblock body %}
